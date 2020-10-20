@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,12 +7,16 @@ public class PlayerController : MonoBehaviour
     public Vector2 movement;
     public float speed;
     public GameObject camera;
+    public Animator animator;
     public Rigidbody2D rb2d;
+    public GameObject sword;
+    public Boolean attacking;
+
+    private Vector3 parentPos;
 
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -21,6 +25,24 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (Input.GetKeyDown(KeyCode.Space) && !attacking)
+        {
+            StartCoroutine(Slash());
+        }
+
+    }
+
+    IEnumerator Slash()
+    {
+        attacking = true;
+        sword.SetActive(true);
+        yield return new WaitForSeconds(0.25f);
+        sword.SetActive(false);
+        attacking = false;
     }
 
     private void FixedUpdate()
@@ -31,6 +53,31 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        camera.transform.position = transform.position + new Vector3(0,0, -1);
+        camera.transform.position = transform.position + new Vector3(0, 0, -1);
+
+        parentPos = gameObject.transform.position + new Vector3(0, 0, 1);
+
+        //sword.SetActive(true);
+        if (movement.y == 1)
+        {
+            sword.transform.position = parentPos + Vector3.up;
+            sword.transform.eulerAngles = new Vector3(0, 0, 90);
+        }
+        else if (movement.y == -1)
+        {
+            sword.transform.position = (parentPos - new Vector3(0, 0, 1.5f)) + Vector3.down;
+            sword.transform.eulerAngles = new Vector3(0, 0, 90);
+        }
+        else if (movement.x == -1)
+        {
+            sword.transform.position = parentPos + Vector3.left;
+            sword.transform.eulerAngles = Vector3.zero;
+        }
+        else if (movement.x == 1)
+        {
+            sword.transform.position = parentPos + Vector3.right;
+            sword.transform.eulerAngles = Vector3.zero;
+        }
+
     }
 }
