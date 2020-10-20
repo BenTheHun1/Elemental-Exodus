@@ -217,10 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8352a67753d229a409918d4d7e9d5b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xInput: 0
-  yInput: 0
+  movement: {x: 0, y: 0}
   speed: 10
   camera: {fileID: 1761604763}
+  rb2d: {fileID: 1289453688}
 --- !u!50 &1289453688
 Rigidbody2D:
   serializedVersion: 4
