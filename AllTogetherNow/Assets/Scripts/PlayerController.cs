@@ -60,21 +60,25 @@ public class PlayerController : MonoBehaviour
         //sword.SetActive(true);
         if (movement.y == 1)
         {
+            animator.SetInteger("Idle", 1);
             sword.transform.position = parentPos + Vector3.up;
             sword.transform.eulerAngles = new Vector3(0, 0, 90);
         }
         else if (movement.y == -1)
         {
+            animator.SetInteger("Idle", 3);
             sword.transform.position = (parentPos - new Vector3(0, 0, 1.5f)) + Vector3.down;
             sword.transform.eulerAngles = new Vector3(0, 0, 90);
         }
         else if (movement.x == -1)
         {
+            animator.SetInteger("Idle", 4);
             sword.transform.position = parentPos + Vector3.left;
             sword.transform.eulerAngles = Vector3.zero;
         }
         else if (movement.x == 1)
         {
+            animator.SetInteger("Idle", 2);
             sword.transform.position = parentPos + Vector3.right;
             sword.transform.eulerAngles = Vector3.zero;
         }
