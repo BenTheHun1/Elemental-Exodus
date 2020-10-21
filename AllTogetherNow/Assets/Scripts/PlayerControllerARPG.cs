@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerControllerARPG : MonoBehaviour
 {
     public Vector2 movement;
     public float speed;
@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb2d.MovePosition(rb2d.position + Time.fixedDeltaTime * speed * movement);
         rb2d.MovePosition(rb2d.position + Time.fixedDeltaTime * speed * movement);
     }
 

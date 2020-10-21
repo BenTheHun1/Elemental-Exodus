@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Combat : MonoBehaviour
+public class SpawnManagerARPG : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,14 +15,4 @@ public class Combat : MonoBehaviour
     {
         
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Yo");
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(other.gameObject);
-        }
-    }
-
 }
