@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {x: 0, y: 0}
-  speed: 10
+  speed: 7
   camera: {fileID: 1761604763}
   animator: {fileID: 1289453690}
   rb2d: {fileID: 1289453688}
