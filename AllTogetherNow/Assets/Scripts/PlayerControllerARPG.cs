@@ -6,7 +6,7 @@ public class PlayerControllerARPG : MonoBehaviour
 {
     public Vector2 movement;
     public float speed;
-    public GameObject camera;
+    public GameObject Camera;
     public Animator animator;
     public Rigidbody2D rb2d;
     public GameObject sword;
@@ -61,7 +61,7 @@ public class PlayerControllerARPG : MonoBehaviour
 
     private void LateUpdate()
     {
-        camera.transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinCameraPos.x, MaxCameraPos.x), Mathf.Clamp(transform.position.y, MinCameraPos.y, MaxCameraPos.y), -10);
+        Camera.transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinCameraPos.x, MaxCameraPos.x), Mathf.Clamp(transform.position.y, MinCameraPos.y, MaxCameraPos.y), -10);
         //.transform.position = transform.position + new Vector3(0, 0, -1);
 
         parentPos = gameObject.transform.position + new Vector3(0, 0, 1);
