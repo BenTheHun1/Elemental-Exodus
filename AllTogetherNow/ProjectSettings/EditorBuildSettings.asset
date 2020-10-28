@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/WaterZone.unity
     guid: c063c0f8bcce73145a3520d8772fcd24
   - enabled: 1
-    path: Assets/Scenes/FireZone.unity
+    path: Assets/Scenes/FireZoneAct1.unity
     guid: 08315ebeee5930d4d9a48f2255ff7003
   m_configObjects: {}
