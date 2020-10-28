@@ -12,11 +12,20 @@ public class PlayerControllerARPG : MonoBehaviour
     public GameObject sword;
     public Boolean attacking;
 
+    private BoxCollider2D bg_collider;
+    private Vector2 MinCameraPos;
+    private Vector2 MaxCameraPos;
+
     private Vector3 parentPos;
 
     // Start is called before the first frame update
     void Start()
     {
+        bg_collider = GameObject.Find("BG").GetComponent<BoxCollider2D>();
+        MinCameraPos = -bg_collider.size * 3;
+        MaxCameraPos = bg_collider.size * 3;
+        Debug.Log(bg_collider.size);
+        
     }
 
     // Update is called once per frame
@@ -52,7 +61,8 @@ public class PlayerControllerARPG : MonoBehaviour
 
     private void LateUpdate()
     {
-        camera.transform.position = transform.position + new Vector3(0, 0, -1);
+        camera.transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinCameraPos.x, MaxCameraPos.x), Mathf.Clamp(transform.position.y, MinCameraPos.y, MaxCameraPos.y), -10);
+        //.transform.position = transform.position + new Vector3(0, 0, -1);
 
         parentPos = gameObject.transform.position + new Vector3(0, 0, 1);
 
