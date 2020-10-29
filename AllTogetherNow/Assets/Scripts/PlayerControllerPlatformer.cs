@@ -9,15 +9,60 @@ public class PlayerControllerPlatformer : MonoBehaviour
 	public float JumpPower;
 	public bool horizontalaxis;
 	public bool verticalaxis;
+	public bool flipped;
 	public Vector3 MinCameraPos;
 	public Vector3 MaxCameraPos;
 	public Rigidbody2D rigidbody2d;
+	public Animator animator;
 
     void Update()
     {
 		Jump();
 		float DirectionX = Input.GetAxis ("Horizontal") * Speed * Time.deltaTime;
 		transform.position = new Vector2 (transform.position.x + DirectionX, transform.position.y);
+		
+		if (DirectionX > 0)
+		{
+		print("Walking Right");
+		flipped = false;
+		animator.SetBool("Idle", false);
+		animator.SetBool("Walking", true);
+		animator.SetBool("FlippedWalk", false);
+		animator.SetBool("FlippedIdle", false);
+		}
+		
+		if (DirectionX < 0)
+		{
+		print("Walking Left");
+		flipped = true;
+		animator.SetBool("Idle", false);
+		animator.SetBool("Walking", false);
+		animator.SetBool("FlippedWalk", true);
+		animator.SetBool("FlippedIdle", false);
+		}
+		
+		if ((DirectionX == 0) && flipped == false)
+		{
+		animator.SetBool("Idle", true);
+		animator.SetBool("Walking", false);
+		animator.SetBool("FlippedWalk", false);
+		animator.SetBool("FlippedIdle", false);
+		}
+		
+		if ((DirectionX == 0) && flipped == true)
+		{
+		animator.SetBool("Idle", false);
+		animator.SetBool("Walking", false);
+		animator.SetBool("FlippedWalk", false);
+		animator.SetBool("FlippedIdle", true);
+		}
+
+		
+		if (rigidbody2d.velocity.y < -0.1)
+		{
+		rigidbody2d.gravityScale = 0.3f;
+		}
+		
 		
 		if (horizontalaxis)
 		{
@@ -35,6 +80,7 @@ public class PlayerControllerPlatformer : MonoBehaviour
     {
 		if (Input.GetButtonDown("Jump"))
 		{
+			rigidbody2d.gravityScale = 1;
 			Speed = 8f;
 			rigidbody2d.velocity = Vector2.up * JumpPower * 1.3f;
 		}
