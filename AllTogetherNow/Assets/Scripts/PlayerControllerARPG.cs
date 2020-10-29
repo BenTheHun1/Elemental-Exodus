@@ -13,6 +13,7 @@ public class PlayerControllerARPG : MonoBehaviour
     public GameObject sword;
     public Boolean attacking;
     private GameObject hpscript;
+    private bool invincible;
 
     private Renderer bg_rend;
     public Vector2 MinCameraPos;
@@ -51,6 +52,14 @@ public class PlayerControllerARPG : MonoBehaviour
         }
 
     }
+
+    IEnumerator Invincible()
+    {
+        invincible = true;
+        yield return new WaitForSeconds(0.75f);
+        invincible = false;
+    }
+
 
     IEnumerator Slash()
     {
@@ -103,9 +112,10 @@ public class PlayerControllerARPG : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") && !invincible)
         {
             hpscript.GetComponent<Health>().takeDamage(1);
+            StartCoroutine("Invincible");
         }
     }
 }
