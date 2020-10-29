@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 public class PlayerControllerARPG : MonoBehaviour
 {
     public Vector2 movement;
     public float speed;
-    public GameObject Camera;
+    private GameObject Camera;
     public Animator animator;
     public Rigidbody2D rb2d;
     public GameObject sword;
     public Boolean attacking;
 
-    private BoxCollider2D bg_collider;
+    private Renderer bg_rend;
     private Vector2 MinCameraPos;
     private Vector2 MaxCameraPos;
 
@@ -21,16 +22,19 @@ public class PlayerControllerARPG : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bg_collider = GameObject.Find("BG").GetComponent<BoxCollider2D>();
-        MinCameraPos = -bg_collider.size * 3;
-        MaxCameraPos = bg_collider.size * 3;
-        Debug.Log(bg_collider.size);
+        Camera = GameObject.Find("Main Camera");
+        bg_rend = GameObject.Find("BG").GetComponent<Renderer>();
+        MinCameraPos = new Vector2(-bg_rend.bounds.size.x / 2 + (Screen.width / 80f), -bg_rend.bounds.size.y / 2 + (Screen.height / 80f));
+        MaxCameraPos = new Vector2(bg_rend.bounds.size.x / 2 - (Screen.width / 80f), bg_rend.bounds.size.y / 2 - (Screen.height / 80f));
+        Debug.Log(bg_rend.bounds.size.x / 2);
+        Debug.Log(Screen.width / 80f);
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(Screen.width);
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
