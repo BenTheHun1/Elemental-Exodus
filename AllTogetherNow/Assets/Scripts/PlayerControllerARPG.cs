@@ -7,11 +7,12 @@ public class PlayerControllerARPG : MonoBehaviour
 {
     public Vector2 movement;
     public float speed;
-    private GameObject Camera;
+    private GameObject cam;
     public Animator animator;
     public Rigidbody2D rb2d;
     public GameObject sword;
     public Boolean attacking;
+    private GameObject hpscript;
 
     private Renderer bg_rend;
     private Vector2 MinCameraPos;
@@ -22,12 +23,14 @@ public class PlayerControllerARPG : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Camera = GameObject.Find("Main Camera");
+        cam = GameObject.Find("Main Camera");
+        hpscript = GameObject.Find("Canvas");
         bg_rend = GameObject.Find("BG").GetComponent<Renderer>();
         MinCameraPos = new Vector2(-bg_rend.bounds.size.x / 2 + (Screen.width / 80f), -bg_rend.bounds.size.y / 2 + (Screen.height / 80f));
         MaxCameraPos = new Vector2(bg_rend.bounds.size.x / 2 - (Screen.width / 80f), bg_rend.bounds.size.y / 2 - (Screen.height / 80f));
-        Debug.Log(bg_rend.bounds.size.x / 2);
-        Debug.Log(Screen.width / 80f);
+        
+        //Debug.Log(bg_rend.bounds.size.x / 2);
+        //Debug.Log(Screen.width / 80f);
         
     }
 
@@ -65,7 +68,7 @@ public class PlayerControllerARPG : MonoBehaviour
 
     private void LateUpdate()
     {
-        Camera.transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinCameraPos.x, MaxCameraPos.x), Mathf.Clamp(transform.position.y, MinCameraPos.y, MaxCameraPos.y), -10);
+        cam.transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinCameraPos.x, MaxCameraPos.x), Mathf.Clamp(transform.position.y, MinCameraPos.y, MaxCameraPos.y), -10);
         //.transform.position = transform.position + new Vector3(0, 0, -1);
 
         parentPos = gameObject.transform.position + new Vector3(0, 0, 1);
@@ -96,5 +99,13 @@ public class PlayerControllerARPG : MonoBehaviour
             sword.transform.eulerAngles = Vector3.zero;
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            hpscript.GetComponent<Health>().takeDamage(1);
+        }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerControllerPlatformer : MonoBehaviour
 {
-	public GameObject Camera;
+	public GameObject cam;
 	public float Speed;
 	public float JumpPower;
 	public bool horizontalaxis;
@@ -21,12 +21,12 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		
 		if (horizontalaxis)
 		{
-          Camera.transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinCameraPos.x, MaxCameraPos.x), 1, -1);
+          cam.transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinCameraPos.x, MaxCameraPos.x), 1, -1);
 		}
 		
 		if (verticalaxis)
 		{
-          Camera.transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinCameraPos.x, MaxCameraPos.x), Mathf.Clamp(transform.position.y, MinCameraPos.y, MaxCameraPos.y), -1);
+			cam.transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinCameraPos.x, MaxCameraPos.x), Mathf.Clamp(transform.position.y, MinCameraPos.y, MaxCameraPos.y), -1);
 		}
 		
     }
