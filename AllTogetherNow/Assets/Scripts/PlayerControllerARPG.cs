@@ -15,8 +15,8 @@ public class PlayerControllerARPG : MonoBehaviour
     private GameObject hpscript;
 
     private Renderer bg_rend;
-    private Vector2 MinCameraPos;
-    private Vector2 MaxCameraPos;
+    public Vector2 MinCameraPos;
+    public Vector2 MaxCameraPos;
 
     private Vector3 parentPos;
 
@@ -26,9 +26,9 @@ public class PlayerControllerARPG : MonoBehaviour
         cam = GameObject.Find("Main Camera");
         hpscript = GameObject.Find("Canvas");
         bg_rend = GameObject.Find("BG").GetComponent<Renderer>();
-        MinCameraPos = new Vector2(-bg_rend.bounds.size.x / 2 + (Screen.width / 80f), -bg_rend.bounds.size.y / 2 + (Screen.height / 80f));
-        MaxCameraPos = new Vector2(bg_rend.bounds.size.x / 2 - (Screen.width / 80f), bg_rend.bounds.size.y / 2 - (Screen.height / 80f));
-        
+        //MinCameraPos = new Vector2(-bg_rend.bounds.size.x / 2 + (Screen.width / 80f), -bg_rend.bounds.size.y / 2 + (Screen.height / 80f));
+        //MaxCameraPos = new Vector2(bg_rend.bounds.size.x / 2 - (Screen.width / 80f), bg_rend.bounds.size.y / 2 - (Screen.height / 80f));
+        //Camera.world
         //Debug.Log(bg_rend.bounds.size.x / 2);
         //Debug.Log(Screen.width / 80f);
         
