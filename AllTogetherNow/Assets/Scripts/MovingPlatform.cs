@@ -44,6 +44,7 @@ public class MovingPlatform : MonoBehaviour
     {
         while (true)
         {
+            transform.position = position_1;
             yield return new WaitForSeconds(2);
             for (float i = 0f; i < speed; i++)
             {
@@ -57,7 +58,6 @@ public class MovingPlatform : MonoBehaviour
                 transform.Translate(-(position_2 - position_1) / speed);
                 yield return new WaitForSeconds(0.005f);
             }
-            transform.position = position_1;
 
         }
     }
