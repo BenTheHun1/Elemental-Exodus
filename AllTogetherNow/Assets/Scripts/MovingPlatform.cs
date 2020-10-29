@@ -7,7 +7,7 @@ public class MovingPlatform : MonoBehaviour
 {
     public Vector3 position_1;
     public Vector3 position_2;
-    private float speed;
+    public float speed;
     public BoxCollider2D exit_1;
     public BoxCollider2D exit_2;
     public GameObject receiver_1;
@@ -16,7 +16,6 @@ public class MovingPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 100.0f;
         StartCoroutine("Move");
     }
 
