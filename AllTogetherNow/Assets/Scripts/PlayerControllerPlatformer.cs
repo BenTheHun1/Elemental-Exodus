@@ -10,6 +10,7 @@ public class PlayerControllerPlatformer : MonoBehaviour
 	public bool horizontalaxis;
 	public bool verticalaxis;
 	public bool flipped;
+	public bool isUnderWater;
 	public Vector3 MinCameraPos;
 	public Vector3 MaxCameraPos;
 	public Rigidbody2D rigidbody2d;
@@ -23,7 +24,6 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		
 		if (DirectionX > 0)
 		{
-		print("Walking Right");
 		flipped = false;
 		animator.SetBool("Idle", false);
 		animator.SetBool("Walking", true);
@@ -33,7 +33,6 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		
 		if (DirectionX < 0)
 		{
-		print("Walking Left");
 		flipped = true;
 		animator.SetBool("Idle", false);
 		animator.SetBool("Walking", false);
@@ -58,7 +57,7 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		}
 
 		
-		if (rigidbody2d.velocity.y < -0.1)
+		if ((rigidbody2d.velocity.y < -0.1) && isUnderWater == true)
 		{
 		rigidbody2d.gravityScale = 0.3f;
 		}
@@ -80,9 +79,19 @@ public class PlayerControllerPlatformer : MonoBehaviour
     {
 		if (Input.GetButtonDown("Jump"))
 		{
+			
+			if (isUnderWater == false)
+			{
+			Speed = 8f;
+			rigidbody2d.velocity = Vector2.up * JumpPower * 1.3f;
+			}
+			
+			if (isUnderWater == true)
+			{
 			rigidbody2d.gravityScale = 1;
 			Speed = 8f;
 			rigidbody2d.velocity = Vector2.up * JumpPower * 1.3f;
+			}
 		}
 	   
     }
@@ -101,7 +110,7 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.name == "Sand")
+		if ((collision.gameObject.name == "Sand") && isUnderWater == true)
         {
 			foreach(ContactPoint2D hitPos in collision.contacts)
 			{
@@ -116,7 +125,17 @@ public class PlayerControllerPlatformer : MonoBehaviour
 	}
 	
 	void OnTriggerStay2D(Collider2D collision)
-    {	
+    {
+		
+		if (collision.gameObject.name == "OutOfWater")
+        {
+			isUnderWater = false;
+        }
+
+		if (collision.gameObject.name == "InWater")
+        {
+			isUnderWater = true;
+        }
 		
 		if (collision.gameObject.name == "ChangeCameraPerspectiveHorizontal")
         {
