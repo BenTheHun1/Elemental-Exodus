@@ -16,6 +16,8 @@ public class PlayerControllerPlatformer : MonoBehaviour
 	public Vector3 MaxCameraPos;
 	public Rigidbody2D rigidbody2d;
 	public Animator animator;
+	public GameObject healthScript;
+	public bool invincible;
 
     void Update()
     {
@@ -198,5 +200,20 @@ public class PlayerControllerPlatformer : MonoBehaviour
         }
 		
     }
-	
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") && !invincible)
+        {
+			healthScript.GetComponent<Health>().takeDamage(1);
+			StartCoroutine("Invincible");
+		}
+    }
+
+	IEnumerator Invincible()
+	{
+		invincible = true;
+		yield return new WaitForSeconds(0.75f);
+		invincible = false;
+	}
 }
