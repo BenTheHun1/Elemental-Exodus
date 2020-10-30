@@ -8,6 +8,8 @@ TagManager:
   - Hole
   - Platform
   - Weapon
+  - Treasure
+  - Bullet
   layers:
   - Default
   - TransparentFX

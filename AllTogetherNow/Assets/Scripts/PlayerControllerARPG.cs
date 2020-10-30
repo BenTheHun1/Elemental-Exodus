@@ -65,6 +65,7 @@ public class PlayerControllerARPG : MonoBehaviour
     {
         attacking = true;
         sword.SetActive(true);
+        sword.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(0.25f);
         sword.SetActive(false);
         attacking = false;
@@ -114,6 +115,12 @@ public class PlayerControllerARPG : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy") && !invincible)
         {
+            hpscript.GetComponent<Health>().takeDamage(1);
+            StartCoroutine("Invincible");
+        }
+        if (other.gameObject.CompareTag("Bullet") && !invincible)
+        {
+            Destroy(other.gameObject);
             hpscript.GetComponent<Health>().takeDamage(1);
             StartCoroutine("Invincible");
         }
