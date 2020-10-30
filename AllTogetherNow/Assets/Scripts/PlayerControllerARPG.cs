@@ -15,8 +15,9 @@ public class PlayerControllerARPG : MonoBehaviour
     public Boolean attacking;
     private GameObject hpscript;
     private bool invincible;
+    public GameObject gem;
 
-    private Renderer bg_rend;
+    //private Renderer bg_rend;
     public Vector2 MinCameraPos;
     public Vector2 MaxCameraPos;
 
@@ -27,7 +28,7 @@ public class PlayerControllerARPG : MonoBehaviour
     {
         cam = GameObject.Find("Main Camera");
         hpscript = GameObject.Find("Canvas");
-        bg_rend = GameObject.Find("BG").GetComponent<Renderer>();
+        //bg_rend = GameObject.Find("BG").GetComponent<Renderer>();
         //MinCameraPos = new Vector2(-bg_rend.bounds.size.x / 2 + (Screen.width / 80f), -bg_rend.bounds.size.y / 2 + (Screen.height / 80f));
         //MaxCameraPos = new Vector2(bg_rend.bounds.size.x / 2 - (Screen.width / 80f), bg_rend.bounds.size.y / 2 - (Screen.height / 80f));
         //Camera.world
@@ -95,13 +96,13 @@ public class PlayerControllerARPG : MonoBehaviour
         {
             animator.SetInteger("Idle", 3);
             sword.transform.position = (parentPos - new Vector3(0, 0, 1.5f)) + Vector3.down;
-            sword.transform.eulerAngles = new Vector3(0, 0, 90);
+            sword.transform.eulerAngles = new Vector3(0, 0, -90);
         }
         else if (movement.x == -1)
         {
             animator.SetInteger("Idle", 4);
             sword.transform.position = parentPos + Vector3.left;
-            sword.transform.eulerAngles = Vector3.zero;
+            sword.transform.eulerAngles = new Vector3(0, 0, -180);
         }
         else if (movement.x == 1)
         {
@@ -138,7 +139,11 @@ public class PlayerControllerARPG : MonoBehaviour
             }
             if (SceneManager.GetActiveScene().name == "FireZoneAct3")
             {
-                PlayerPrefs.SetInt("FZGEM", 1);
+                if (gem.GetComponent<PickUpGem>().hasGem == true)
+                {
+                    PlayerPrefs.SetInt("FZGEM", 1);
+                }
+               
             }
             SceneManager.LoadScene(1);
         }

@@ -61,6 +61,24 @@ public class LevelSelect : MonoBehaviour
         {
             water3.GetComponent<Button>().interactable = false;
         }
+
+        if (PlayerPrefs.GetInt("FZGEM") == 1)
+        {
+            GameObject.Find("Fire Gem").SetActive(true);
+        }
+        else
+        {
+            GameObject.Find("Fire Gem").SetActive(false);
+        }
+
+        if (PlayerPrefs.GetInt("WZGEM") == 1)
+        {
+            GameObject.Find("Water Gem").SetActive(true);
+        }
+        else
+        {
+            GameObject.Find("Water Gem").SetActive(false);
+        }
     }
 
     void Fire1()

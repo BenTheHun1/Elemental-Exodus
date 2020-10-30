@@ -5,13 +5,16 @@ using UnityEngine;
 
 public class PickUpGem : MonoBehaviour
 {
-    private bool hasGem = false;
+    public bool hasGem = false;
     public GameObject gem_notif;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (PlayerPrefs.GetInt("FZGEM") == 1)
+        {
+           hasGem = true;
+        }
     }
 
     // Update is called once per frame
