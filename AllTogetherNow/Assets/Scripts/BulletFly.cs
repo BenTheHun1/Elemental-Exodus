@@ -8,7 +8,6 @@ public class BulletFly : MonoBehaviour
     void Start()
     {
         StartCoroutine("Move");
-        Debug.Log("yo1");
     }
 
 
