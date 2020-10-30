@@ -11,6 +11,7 @@ public class PlayerControllerPlatformer : MonoBehaviour
 	public bool verticalaxis;
 	public bool flipped;
 	public bool isUnderWater;
+	public bool isJumping;
 	public Vector3 MinCameraPos;
 	public Vector3 MaxCameraPos;
 	public Rigidbody2D rigidbody2d;
@@ -22,7 +23,7 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		float DirectionX = Input.GetAxis ("Horizontal") * Speed * Time.deltaTime;
 		transform.position = new Vector2 (transform.position.x + DirectionX, transform.position.y);
 		
-		if (DirectionX > 0)
+		if ((DirectionX > 0 && isJumping == false))
 		{
 		flipped = false;
 		animator.SetBool("Idle", false);
@@ -40,7 +41,7 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		animator.SetBool("FlippedIdle", false);
 		}
 		
-		if ((DirectionX == 0) && flipped == false)
+		if ((DirectionX == 0) && flipped == false && isJumping == false)
 		{
 		animator.SetBool("Idle", true);
 		animator.SetBool("Walking", false);
@@ -80,8 +81,15 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		if (Input.GetButtonDown("Jump"))
 		{
 			
-			if (isUnderWater == false)
+			if ((isUnderWater == false) && isJumping == false)
 			{
+			isJumping = true;
+			animator.SetBool("Idle", false);
+			animator.SetBool("Walking", false);
+			animator.SetBool("FlippedWalk", false);
+			animator.SetBool("FlippedIdle", false);
+			animator.SetBool("Jump", true);
+			print("JUMP");
 			Speed = 8f;
 			rigidbody2d.velocity = Vector2.up * JumpPower * 1.3f;
 			}
@@ -99,7 +107,7 @@ public class PlayerControllerPlatformer : MonoBehaviour
 	void OnCollisionExit2D (Collision2D collision)
 	{
 	
-		if (collision.gameObject.name == "Sand")
+		if ((collision.gameObject.name == "Sand") && isUnderWater == true)
 		{
 				Speed = 8f;
 		   
@@ -122,6 +130,18 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		   
 		   
         }
+		
+		if ((collision.gameObject.name == "Sand") && isUnderWater == false)
+		{
+			foreach(ContactPoint2D hitPos in collision.contacts)
+			{
+				if (hitPos.normal.y > 0)
+				{
+				isJumping = false;
+				}
+			}
+		}
+		
 	}
 	
 	void OnTriggerStay2D(Collider2D collision)
@@ -157,6 +177,14 @@ public class PlayerControllerPlatformer : MonoBehaviour
         {
 			MinCameraPos = new Vector3(-1,24,-1);
 			MaxCameraPos = new Vector3(137,43,-1);
+			verticalaxis = true;
+			horizontalaxis = false;
+        }
+		
+		if (collision.gameObject.name == "ScrollerDetector")
+        {
+			MinCameraPos = new Vector3(3,-46,-1);
+			MaxCameraPos = new Vector3(420,111,-1);
 			verticalaxis = true;
 			horizontalaxis = false;
         }
