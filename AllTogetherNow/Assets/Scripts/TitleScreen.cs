@@ -18,7 +18,7 @@ public class TitleScreen : MonoBehaviour
 
 	void TaskOnClick()
 	{
-		SceneManager.LoadScene("FireZoneAct1");
+		SceneManager.LoadScene("LevelSelect");
 	}
 
 	void Quit()
