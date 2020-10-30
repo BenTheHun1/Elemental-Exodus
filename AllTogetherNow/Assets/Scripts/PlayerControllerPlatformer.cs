@@ -32,7 +32,7 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		animator.SetBool("FlippedIdle", false);
 		}
 		
-		if (DirectionX < 0)
+		if ((DirectionX < 0 && isJumping == false))
 		{
 		flipped = true;
 		animator.SetBool("Idle", false);
@@ -49,7 +49,7 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		animator.SetBool("FlippedIdle", false);
 		}
 		
-		if ((DirectionX == 0) && flipped == true)
+		if ((DirectionX == 0) && flipped == true  && isJumping == false)
 		{
 		animator.SetBool("Idle", false);
 		animator.SetBool("Walking", false);
@@ -88,8 +88,16 @@ public class PlayerControllerPlatformer : MonoBehaviour
 			animator.SetBool("Walking", false);
 			animator.SetBool("FlippedWalk", false);
 			animator.SetBool("FlippedIdle", false);
+			if (flipped == false)
+			{
 			animator.SetBool("Jump", true);
-			print("JUMP");
+			}
+			if (flipped == true)
+			{
+			animator.SetBool("Jump", false);
+			animator.SetBool("FlippedJump", true);
+			print("Flipped");
+			}
 			Speed = 8f;
 			rigidbody2d.velocity = Vector2.up * JumpPower * 1.3f;
 			}
