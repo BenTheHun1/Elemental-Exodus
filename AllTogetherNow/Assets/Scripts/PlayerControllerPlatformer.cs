@@ -98,7 +98,6 @@ public class PlayerControllerPlatformer : MonoBehaviour
 			{
 			animator.SetBool("Jump", false);
 			animator.SetBool("FlippedJump", true);
-			print("Flipped");
 			}
 			Speed = 8f;
 			rigidbody2d.velocity = Vector2.up * JumpPower * 1.3f;
@@ -167,34 +166,21 @@ public class PlayerControllerPlatformer : MonoBehaviour
 			isUnderWater = true;
         }
 		
-		if (collision.gameObject.name == "ChangeCameraPerspectiveHorizontal")
-        {
-			MinCameraPos = new Vector3(-1,-46,-1);
-			MaxCameraPos = new Vector3(137,-21,-1);
-			horizontalaxis = true;
-			verticalaxis = false;
-        }
-		
-		if (collision.gameObject.name == "ChangeCameraPerspectiveVerticalBottom")
-        {
-			MinCameraPos = new Vector3(-1,-46,-1);
-			MaxCameraPos = new Vector3(137,-21,-1);
-			verticalaxis = true;
-			horizontalaxis = false;
-        }
-		
-		if (collision.gameObject.name == "ChangeCameraPerspectiveVerticalTop")
-        {
-			MinCameraPos = new Vector3(-1,24,-1);
-			MaxCameraPos = new Vector3(137,43,-1);
-			verticalaxis = true;
-			horizontalaxis = false;
-        }
-		
 		if (collision.gameObject.name == "ScrollerDetector")
         {
+			
+			if (isUnderWater == false)
+			{
 			MinCameraPos = new Vector3(3,-46,-1);
-			MaxCameraPos = new Vector3(420,111,-1);
+			MaxCameraPos = new Vector3(420,1111,-1);
+			}
+			
+			if (isUnderWater == true)
+			{
+			MinCameraPos = new Vector3(-1111,-1111,-1);
+			MaxCameraPos = new Vector3(1111,1111,-1);
+			}
+			
 			verticalaxis = true;
 			horizontalaxis = false;
         }
