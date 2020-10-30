@@ -28,38 +28,38 @@ public class LevelSelect : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("FZA2") == 1)
         {
-            fire2.GetComponent<Button>().interactable = true;
+            fire2.gameObject.SetActive(true);
         }
         else
         {
-            fire2.GetComponent<Button>().interactable = false;
+            fire2.gameObject.SetActive(false);
         }
 
         if (PlayerPrefs.GetInt("FZA3") == 1)
         {
-            fire3.GetComponent<Button>().interactable = true;
+            fire3.gameObject.SetActive(true);
         }
         else
         {
-            fire3.GetComponent<Button>().interactable = false;
+            fire3.gameObject.SetActive(false);
         }
 
         if (PlayerPrefs.GetInt("WZA2") == 1)
         {
-            water2.GetComponent<Button>().interactable = true;
+            water2.gameObject.SetActive(true);
         }
         else
         {
-            water2.GetComponent<Button>().interactable = false;
+            water2.gameObject.SetActive(false);
         }
 
         if (PlayerPrefs.GetInt("WZA3") == 1)
         {
-            water3.GetComponent<Button>().interactable = true;
+            water3.gameObject.SetActive(true);
         }
         else
         {
-            water3.GetComponent<Button>().interactable = false;
+            water3.gameObject.SetActive(false);
         }
 
         if (PlayerPrefs.GetInt("FZGEM") == 1)

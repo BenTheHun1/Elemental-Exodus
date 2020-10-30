@@ -8,12 +8,14 @@ public class TitleScreen : MonoBehaviour
 {
 	public Button start;
 	public Button quit;
+	public Button startOver;
 
 	void Start()
 	{
 		Button btn = start.GetComponent<Button>();
 		btn.onClick.AddListener(TaskOnClick);
 		quit.GetComponent<Button>().onClick.AddListener(Quit);
+		startOver.GetComponent<Button>().onClick.AddListener(DeleteProg);
 	}
 
 	void TaskOnClick()
@@ -24,6 +26,11 @@ public class TitleScreen : MonoBehaviour
 	void Quit()
     {
 		Application.Quit();
+    }
+
+	void DeleteProg()
+    {
+		PlayerPrefs.DeleteAll();
     }
 
 }

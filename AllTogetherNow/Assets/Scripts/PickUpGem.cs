@@ -13,7 +13,8 @@ public class PickUpGem : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("FZGEM") == 1)
         {
-           hasGem = true;
+            hasGem = true;
+            gameObject.GetComponent<Animator>().SetBool("Gem Taken", true);
         }
     }
 
