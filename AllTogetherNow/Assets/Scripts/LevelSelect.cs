@@ -12,9 +12,11 @@ public class LevelSelect : MonoBehaviour
     public Button water1;
     public Button water2;
     public Button water3;
+    public Button final;
     // Start is called before the first frame update
     void Start()
     {
+        final.GetComponent<Button>().onClick.AddListener(Final);
         fire1.GetComponent<Button>().onClick.AddListener(Fire1);
         fire2.GetComponent<Button>().onClick.AddListener(Fire2);
         fire3.GetComponent<Button>().onClick.AddListener(Fire3);
@@ -79,6 +81,15 @@ public class LevelSelect : MonoBehaviour
         {
             GameObject.Find("Water Gem").SetActive(false);
         }
+
+        if (PlayerPrefs.GetInt("FZGEM") == 1 && PlayerPrefs.GetInt("WZGEM") == 1)
+        {
+            final.gameObject.SetActive(true);
+        }
+        else
+        {
+            final.gameObject.SetActive(false);
+        }
     }
 
     void Fire1()
@@ -109,5 +120,10 @@ public class LevelSelect : MonoBehaviour
     void Water3()
     {
         //SceneManager.LoadScene("WaterZoneAct3");
+    }
+
+    void Final()
+    {
+        SceneManager.LoadScene(7);
     }
 }

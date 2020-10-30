@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 48137850}
   - component: {fileID: 48137849}
   m_Layer: 0
-  m_Name: Sand (28)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 181703200}
   - component: {fileID: 181703199}
   m_Layer: 0
-  m_Name: Sand (26)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -538,7 +538,7 @@ GameObject:
   - component: {fileID: 182621792}
   - component: {fileID: 182621791}
   m_Layer: 0
-  m_Name: Sand (34)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,7 +646,7 @@ GameObject:
   - component: {fileID: 188121826}
   - component: {fileID: 188121825}
   m_Layer: 0
-  m_Name: Sand (22)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -862,7 +862,7 @@ GameObject:
   - component: {fileID: 279031627}
   - component: {fileID: 279031626}
   m_Layer: 0
-  m_Name: Sand (20)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -970,7 +970,7 @@ GameObject:
   - component: {fileID: 286235704}
   - component: {fileID: 286235703}
   m_Layer: 0
-  m_Name: Sand (18)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1078,7 +1078,7 @@ GameObject:
   - component: {fileID: 381501516}
   - component: {fileID: 381501515}
   m_Layer: 0
-  m_Name: Sand (4)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1172,7 +1172,7 @@ Transform:
   m_LocalScale: {x: 7.7055793, y: 8.346403, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &382289745
 GameObject:
@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 382289747}
   - component: {fileID: 382289746}
   m_Layer: 0
-  m_Name: Sand (3)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1280,7 +1280,7 @@ Transform:
   m_LocalScale: {x: 10.419554, y: 8.346403, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &404071573
 GameObject:
@@ -1294,7 +1294,7 @@ GameObject:
   - component: {fileID: 404071575}
   - component: {fileID: 404071574}
   m_Layer: 0
-  m_Name: Sand (10)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1402,7 +1402,7 @@ GameObject:
   - component: {fileID: 417969559}
   - component: {fileID: 417969558}
   m_Layer: 0
-  m_Name: Sand (16)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1510,7 +1510,7 @@ GameObject:
   - component: {fileID: 440977167}
   - component: {fileID: 440977166}
   m_Layer: 0
-  m_Name: Sand (38)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1618,7 +1618,7 @@ GameObject:
   - component: {fileID: 545236588}
   - component: {fileID: 545236587}
   m_Layer: 0
-  m_Name: Sand (32)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1726,7 +1726,7 @@ GameObject:
   - component: {fileID: 582267139}
   - component: {fileID: 582267138}
   m_Layer: 0
-  m_Name: Sand (21)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1953,7 +1953,7 @@ GameObject:
   - component: {fileID: 602045189}
   - component: {fileID: 602045188}
   m_Layer: 0
-  m_Name: Sand (31)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2061,7 +2061,7 @@ GameObject:
   - component: {fileID: 673026024}
   - component: {fileID: 673026023}
   m_Layer: 0
-  m_Name: Sand (15)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2169,7 +2169,7 @@ GameObject:
   - component: {fileID: 744872375}
   - component: {fileID: 744872374}
   m_Layer: 0
-  m_Name: Sand (36)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2277,7 +2277,7 @@ GameObject:
   - component: {fileID: 754175261}
   - component: {fileID: 754175260}
   m_Layer: 0
-  m_Name: Sand (37)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2385,7 +2385,7 @@ GameObject:
   - component: {fileID: 782255604}
   - component: {fileID: 782255603}
   m_Layer: 0
-  m_Name: Sand (41)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2493,7 +2493,7 @@ GameObject:
   - component: {fileID: 813283708}
   - component: {fileID: 813283707}
   m_Layer: 0
-  m_Name: Sand (35)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2601,7 +2601,7 @@ GameObject:
   - component: {fileID: 821671565}
   - component: {fileID: 821671564}
   m_Layer: 0
-  m_Name: Sand (12)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2709,7 +2709,7 @@ GameObject:
   - component: {fileID: 835914666}
   - component: {fileID: 835914665}
   m_Layer: 0
-  m_Name: Sand (6)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2803,7 +2803,7 @@ Transform:
   m_LocalScale: {x: 7.2193155, y: 8.346403, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &864709074
 GameObject:
@@ -2817,7 +2817,7 @@ GameObject:
   - component: {fileID: 864709076}
   - component: {fileID: 864709075}
   m_Layer: 0
-  m_Name: Sand (7)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2911,7 +2911,7 @@ Transform:
   m_LocalScale: {x: 7.4556603, y: 49.182713, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &883921595
 GameObject:
@@ -2925,7 +2925,7 @@ GameObject:
   - component: {fileID: 883921597}
   - component: {fileID: 883921596}
   m_Layer: 0
-  m_Name: Sand (44)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3033,7 +3033,7 @@ GameObject:
   - component: {fileID: 903228132}
   - component: {fileID: 903228131}
   m_Layer: 0
-  m_Name: Sand (25)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3249,7 +3249,7 @@ GameObject:
   - component: {fileID: 968804803}
   - component: {fileID: 968804802}
   m_Layer: 0
-  m_Name: Sand (5)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3343,7 +3343,7 @@ Transform:
   m_LocalScale: {x: 3.2846084, y: 8.346403, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1027183255
 GameObject:
@@ -3357,7 +3357,7 @@ GameObject:
   - component: {fileID: 1027183257}
   - component: {fileID: 1027183256}
   m_Layer: 0
-  m_Name: Sand (9)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3451,7 +3451,7 @@ Transform:
   m_LocalScale: {x: 25.717337, y: 8.346403, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1072804736
 GameObject:
@@ -3548,7 +3548,7 @@ GameObject:
   - component: {fileID: 1107913494}
   - component: {fileID: 1107913493}
   m_Layer: 0
-  m_Name: Sand (1)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3642,7 +3642,7 @@ Transform:
   m_LocalScale: {x: 0.8122875, y: 118.80483, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1110113184
 GameObject:
@@ -3872,7 +3872,7 @@ GameObject:
   - component: {fileID: 1158047302}
   - component: {fileID: 1158047301}
   m_Layer: 0
-  m_Name: Sand (27)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4182,7 +4182,7 @@ GameObject:
   - component: {fileID: 1243535285}
   - component: {fileID: 1243535284}
   m_Layer: 0
-  m_Name: Sand (17)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4290,7 +4290,7 @@ GameObject:
   - component: {fileID: 1280077309}
   - component: {fileID: 1280077308}
   m_Layer: 0
-  m_Name: Sand (30)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4404,7 +4404,7 @@ GameObject:
   - component: {fileID: 1332416730}
   - component: {fileID: 1332416729}
   m_Layer: 0
-  m_Name: Sand (11)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4512,7 +4512,7 @@ GameObject:
   - component: {fileID: 1352523901}
   - component: {fileID: 1352523900}
   m_Layer: 0
-  m_Name: Sand (24)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4620,7 +4620,7 @@ GameObject:
   - component: {fileID: 1398174502}
   - component: {fileID: 1398174501}
   m_Layer: 0
-  m_Name: Sand (39)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4944,7 +4944,7 @@ GameObject:
   - component: {fileID: 1542431307}
   - component: {fileID: 1542431306}
   m_Layer: 0
-  m_Name: Sand (19)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5050,18 +5050,19 @@ GameObject:
   m_Component:
   - component: {fileID: 1558590776}
   - component: {fileID: 1558590775}
-  - component: {fileID: 1558590774}
   - component: {fileID: 1558590773}
+  - component: {fileID: 1558590777}
   - component: {fileID: 1558590772}
+  - component: {fileID: 1558590774}
   m_Layer: 0
-  m_Name: Shark Submarine Sprite
+  m_Name: Shark Submarine
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1558590772
-BoxCollider2D:
+--- !u!70 &1558590772
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5070,22 +5071,12 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.5601557, y: -0.8459506}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.76, y: 3.44}
-    newSize: {x: 4.76, y: 3.44}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.639689, y: 1.839555}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.008559864, y: -0.8645942}
+  m_Size: {x: 5.1880274, y: 1.4711478}
+  m_Direction: 1
 --- !u!50 &1558590773
 Rigidbody2D:
   serializedVersion: 4
@@ -5116,7 +5107,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1558590771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f9f45faea80aba4fb11508271f8600b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c64b37c52906914f8a4377197ce1780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
@@ -5160,7 +5151,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a0696918670793447911f83d835d4a05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5180,12 +5171,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558590771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 197.4, y: -47.3, z: 0}
+  m_LocalPosition: {x: 197.4, y: -47.3, z: -5}
   m_LocalScale: {x: 5.2123775, y: 5.2123775, z: 5.2123775}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1558590777
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558590771}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.000000084699145, y: -0.710508}
+  m_Size: {x: 4.760002, y: 1.4711456}
+  m_Direction: 1
 --- !u!1 &1568835463
 GameObject:
   m_ObjectHideFlags: 0
@@ -5306,7 +5313,7 @@ GameObject:
   - component: {fileID: 1627225567}
   - component: {fileID: 1627225566}
   m_Layer: 0
-  m_Name: Sand (29)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5414,7 +5421,7 @@ GameObject:
   - component: {fileID: 1721627939}
   - component: {fileID: 1721627938}
   m_Layer: 0
-  m_Name: Sand (14)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5615,7 +5622,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735912425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 161.9, y: -57.6, z: 0}
+  m_LocalPosition: {x: 31.4, y: 57.6, z: 0}
   m_LocalScale: {x: 0.6261907, y: 0.54965633, z: 0.278307}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5793,7 +5800,7 @@ Transform:
   m_LocalScale: {x: 0.6233404, y: 203.69048, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1795307821
 GameObject:
@@ -5807,7 +5814,7 @@ GameObject:
   - component: {fileID: 1795307823}
   - component: {fileID: 1795307822}
   m_Layer: 0
-  m_Name: Sand (13)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5915,7 +5922,7 @@ GameObject:
   - component: {fileID: 1837522009}
   - component: {fileID: 1837522008}
   m_Layer: 0
-  m_Name: Sand (8)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6009,7 +6016,7 @@ Transform:
   m_LocalScale: {x: 14.693997, y: 8.346403, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1953400052
 GameObject:
@@ -6023,7 +6030,7 @@ GameObject:
   - component: {fileID: 1953400054}
   - component: {fileID: 1953400053}
   m_Layer: 0
-  m_Name: Sand (23)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6131,7 +6138,7 @@ GameObject:
   - component: {fileID: 1955124619}
   - component: {fileID: 1955124618}
   m_Layer: 0
-  m_Name: Sand (2)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6239,7 +6246,7 @@ GameObject:
   - component: {fileID: 1959261003}
   - component: {fileID: 1959261002}
   m_Layer: 0
-  m_Name: Sand (33)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6347,7 +6354,7 @@ GameObject:
   - component: {fileID: 1966191298}
   - component: {fileID: 1966191297}
   m_Layer: 0
-  m_Name: Sand (40)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6455,7 +6462,7 @@ GameObject:
   - component: {fileID: 1969620455}
   - component: {fileID: 1969620454}
   m_Layer: 0
-  m_Name: Sand (43)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6563,7 +6570,7 @@ GameObject:
   - component: {fileID: 2000656774}
   - component: {fileID: 2000656773}
   m_Layer: 0
-  m_Name: Sand (42)
+  m_Name: Sand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

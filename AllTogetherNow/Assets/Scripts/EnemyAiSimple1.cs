@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class EnemyAiSimple : MonoBehaviour
+public class EnemyAiSimple1 : MonoBehaviour
 {
     private float speed = 1.1f;
     public int hp;
@@ -48,11 +49,13 @@ public class EnemyAiSimple : MonoBehaviour
         if (hp <= 0)
         {
             Destroy(gameObject);
-            if (isBoss)
-            {
-                GameObject.Find("Bridge").GetComponent<SpriteRenderer>().enabled = true;
-                GameObject.Find("Bridge").GetComponent<BoxCollider2D>().enabled = false;
-            }
+            PlayerPrefs.SetInt("WZGEM", 1);
+            SceneManager.LoadScene(1);
+            // if (isBoss)
+            // {
+            //GameObject.Find("Bridge").GetComponent<SpriteRenderer>().enabled = true;
+            //GameObject.Find("Bridge").GetComponent<BoxCollider2D>().enabled = false;
+            // }
         }
     }
 
@@ -65,14 +68,19 @@ public class EnemyAiSimple : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         random_dir = new Vector2(Random.Range(-5, 6), Random.Range(-5, 6));
-    }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Weapon"))
+        if ((collision.gameObject.name == "tempPlayer"))
         {
-            hp -= 1;
-            checkLife();
+            foreach (ContactPoint2D hitPos in collision.contacts)
+            {
+                if (hitPos.normal.y < 0)
+                {
+                    hp -= 1;
+                    checkLife();
+                }
+            }
+
+
         }
     }
 
