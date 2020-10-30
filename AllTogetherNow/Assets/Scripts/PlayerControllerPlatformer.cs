@@ -177,8 +177,8 @@ public class PlayerControllerPlatformer : MonoBehaviour
 			
 			if (isUnderWater == true)
 			{
-			MinCameraPos = new Vector3(-1111,-1111,-1);
-			MaxCameraPos = new Vector3(1111,1111,-1);
+			MinCameraPos = new Vector3(-950,-1111,-1);
+			MaxCameraPos = new Vector3(950,1111,-1);
 			}
 			
 			verticalaxis = true;

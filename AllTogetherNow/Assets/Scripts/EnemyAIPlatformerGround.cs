@@ -7,7 +7,6 @@ public class EnemyAIPlatformerGround : MonoBehaviour
     private float speed = 1.1f;
     public Rigidbody2D rb2d;
     private Vector2 dir;
-	public bool isUnderWater;
 
     // Start is called before the first frame update
     void Start()
@@ -25,16 +24,6 @@ public class EnemyAIPlatformerGround : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 		
-		if (collision.gameObject.name == "OutOfWater")
-        {
-			isUnderWater = false;
-        }
-
-		if (collision.gameObject.name == "InWater")
-        {
-			isUnderWater = true;
-        }
-		
 		foreach(ContactPoint2D hitPos in collision.contacts)
 		{
 			if (hitPos.normal.x < 0)
@@ -48,7 +37,7 @@ public class EnemyAIPlatformerGround : MonoBehaviour
 			}
 		}
 		
-		if ((collision.gameObject.name == "tempPlayer" && isUnderWater == false))
+		if (collision.gameObject.name == "tempPlayer")
         {
 			foreach(ContactPoint2D hitPos in collision.contacts)
 			{
