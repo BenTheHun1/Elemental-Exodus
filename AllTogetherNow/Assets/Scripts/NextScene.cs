@@ -10,7 +10,16 @@ public class NextScene : MonoBehaviour
     {	
 		if (collision.gameObject.name == "tempPlayer")
         {
-           SceneManager.LoadScene(1);
+            if (SceneManager.GetActiveScene().name == "WaterZoneAct1")
+            {
+                PlayerPrefs.SetInt("WZA2", 1);
+
+            }
+            if (SceneManager.GetActiveScene().name == "WaterZoneAct2")
+            {
+                PlayerPrefs.SetInt("WZGEM", 1);
+            }
+            SceneManager.LoadScene(1);
         }
     }
 }

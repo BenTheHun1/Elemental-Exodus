@@ -98,12 +98,12 @@ public class LevelSelect : MonoBehaviour
 
     void Water1()
     {
-        SceneManager.LoadScene(6);
+        SceneManager.LoadScene(5);
     }
 
     void Water2()
     {
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(6);
     }
 
     void Water3()

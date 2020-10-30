@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class Health : MonoBehaviour
@@ -63,9 +64,9 @@ public class Health : MonoBehaviour
             hearts[1].sprite = empty;
             hearts[2].sprite = empty;
         }
-        else if (hp == 0)
+        else if (hp <= 0)
         {
-            //Back to level select
+            SceneManager.LoadScene(1);
         }
     }
     
