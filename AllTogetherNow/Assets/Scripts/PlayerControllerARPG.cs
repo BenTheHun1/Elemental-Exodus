@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEditor.PackageManager.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerARPG : MonoBehaviour
 {
@@ -123,6 +124,14 @@ public class PlayerControllerARPG : MonoBehaviour
             Destroy(other.gameObject);
             hpscript.GetComponent<Health>().takeDamage(1);
             StartCoroutine("Invincible");
+        }
+        if (other.gameObject.CompareTag("Exit"))
+        {
+            if (SceneManager.GetActiveScene().name == "FireZoneAct1")
+            {
+                PlayerPrefs.SetInt("FZA2", 1);
+            }
+            SceneManager.LoadScene(1);
         }
     }
 }

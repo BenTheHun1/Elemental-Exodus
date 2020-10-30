@@ -18,7 +18,7 @@ public class TitleScreen : MonoBehaviour
 
 	void TaskOnClick()
 	{
-		SceneManager.LoadScene("LevelSelect");
+		SceneManager.LoadScene(1);
 	}
 
 	void Quit()

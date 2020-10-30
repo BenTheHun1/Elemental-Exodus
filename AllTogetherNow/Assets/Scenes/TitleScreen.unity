@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {fileID: 995728440}
-  quit: {fileID: 0}
+  quit: {fileID: 35659711}
 --- !u!1 &790172235
 GameObject:
   m_ObjectHideFlags: 0

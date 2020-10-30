@@ -6,15 +6,11 @@ using UnityEngine.SceneManagement;
 public class NextScene : MonoBehaviour
 {
 
-    void OnCollisionEnter2D(Collision2D collision)
+     void OnCollisionEnter2D(Collision2D collision)
     {	
-	    if (collision.gameObject.CompareTag("Player"))
+		if (collision.gameObject.name == "tempPlayer")
         {
-            if (SceneManager.GetActiveScene().name == "FireZoneAct1")
-            {
-                PlayerPrefs.SetInt("FZA2", 1);
-            }
-            SceneManager.LoadScene("Level Select");
+           SceneManager.LoadScene(1);
         }
     }
 }

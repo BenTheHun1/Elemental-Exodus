@@ -26,7 +26,7 @@ public class LevelSelect : MonoBehaviour
 
     void LoadGame()
     {
-        if (PlayerPrefs.GetInt("FAZ2") == 1)
+        if (PlayerPrefs.GetInt("FZA2") == 1)
         {
             fire2.GetComponent<Button>().interactable = true;
         }
@@ -35,7 +35,7 @@ public class LevelSelect : MonoBehaviour
             fire2.GetComponent<Button>().interactable = false;
         }
 
-        if (PlayerPrefs.GetInt("FAZ3") == 1)
+        if (PlayerPrefs.GetInt("FZA3") == 1)
         {
             fire3.GetComponent<Button>().interactable = true;
         }
@@ -44,7 +44,7 @@ public class LevelSelect : MonoBehaviour
             fire3.GetComponent<Button>().interactable = false;
         }
 
-        if (PlayerPrefs.GetInt("WAZ2") == 1)
+        if (PlayerPrefs.GetInt("WZA2") == 1)
         {
             water2.GetComponent<Button>().interactable = true;
         }
@@ -53,7 +53,7 @@ public class LevelSelect : MonoBehaviour
             water2.GetComponent<Button>().interactable = false;
         }
 
-        if (PlayerPrefs.GetInt("WAZ3") == 1)
+        if (PlayerPrefs.GetInt("WZA3") == 1)
         {
             water3.GetComponent<Button>().interactable = true;
         }
@@ -65,27 +65,27 @@ public class LevelSelect : MonoBehaviour
 
     void Fire1()
     {
-        SceneManager.LoadScene("FireZoneAct1");
+        SceneManager.LoadScene(2);
     }
 
     void Fire2()
     {
-        SceneManager.LoadScene("FireZoneAct2");
+        SceneManager.LoadScene(3);
     }
 
     void Fire3()
     {
-        SceneManager.LoadScene("FireZoneAct3");
+        SceneManager.LoadScene(4);
     }
 
     void Water1()
     {
-        SceneManager.LoadScene("WaterZoneAct1");
+        SceneManager.LoadScene(6);
     }
 
     void Water2()
     {
-        SceneManager.LoadScene("WaterZoneAct2");
+        SceneManager.LoadScene(7);
     }
 
     void Water3()
