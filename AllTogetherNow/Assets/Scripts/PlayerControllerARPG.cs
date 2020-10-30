@@ -130,6 +130,15 @@ public class PlayerControllerARPG : MonoBehaviour
             if (SceneManager.GetActiveScene().name == "FireZoneAct1")
             {
                 PlayerPrefs.SetInt("FZA2", 1);
+
+            }
+            if (SceneManager.GetActiveScene().name == "FireZoneAct2")
+            {
+                PlayerPrefs.SetInt("FZA3", 1);
+            }
+            if (SceneManager.GetActiveScene().name == "FireZoneAct3")
+            {
+                PlayerPrefs.SetInt("FZGEM", 1);
             }
             SceneManager.LoadScene(1);
         }
