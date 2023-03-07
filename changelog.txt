@@ -1,0 +1,10 @@
+Updated Unity to 2020.3.15f2
+Uncompressed sword swing sound
+Rebuilt Water Act 1 and part of Act 2 with unstretched assets
+Restored Aqua's intended height
+Rewritten Aqua's animation , including restoring her intended jumping animation
+Zoomed out camera in Water Act 2, and made attached background to camera.
+removed splash screen
+Fixed/improved final scene formatting
+Improved Title Screen formatting
+Added an icon

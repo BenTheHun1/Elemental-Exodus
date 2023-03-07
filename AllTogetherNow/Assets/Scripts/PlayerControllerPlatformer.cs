@@ -25,44 +25,30 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		float DirectionX = Input.GetAxis ("Horizontal") * Speed * Time.deltaTime;
 		transform.position = new Vector2 (transform.position.x + DirectionX, transform.position.y);
 		
-		if ((DirectionX > 0 && isJumping == false))
-		{
-		flipped = false;
-		animator.SetBool("Idle", false);
-		animator.SetBool("Walking", true);
-		animator.SetBool("FlippedWalk", false);
-		animator.SetBool("FlippedIdle", false);
-		}
-		
-		if ((DirectionX < 0 && isJumping == false))
-		{
-		flipped = true;
-		animator.SetBool("Idle", false);
-		animator.SetBool("Walking", false);
-		animator.SetBool("FlippedWalk", true);
-		animator.SetBool("FlippedIdle", false);
-		}
-		
-		if ((DirectionX == 0) && flipped == false && isJumping == false)
-		{
-		animator.SetBool("Idle", true);
-		animator.SetBool("Walking", false);
-		animator.SetBool("FlippedWalk", false);
-		animator.SetBool("FlippedIdle", false);
-		}
-		
-		if ((DirectionX == 0) && flipped == true  && isJumping == false)
-		{
-		animator.SetBool("Idle", false);
-		animator.SetBool("Walking", false);
-		animator.SetBool("FlippedWalk", false);
-		animator.SetBool("FlippedIdle", true);
+		if (DirectionX != 0)
+        {
+			Debug.Log("moving");
+			animator.SetBool("Walking", true);
+        }
+		else
+        {
+			animator.SetBool("Walking", false);
 		}
 
+		if (DirectionX < 0)
+        {
+			gameObject.transform.localScale = new Vector3(-0.6f, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+        }
+		else if (DirectionX > 0)
+		{
+			gameObject.transform.localScale = new Vector3(0.6f, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+		}
 		
+
+
 		if ((rigidbody2d.velocity.y < -0.1) && isUnderWater == true)
 		{
-		rigidbody2d.gravityScale = 0.3f;
+		rigidbody2d.gravityScale = 2f;
 		}
 		
 		
@@ -70,7 +56,6 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		{
           cam.transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinCameraPos.x, MaxCameraPos.x), 1, -1);
 		}
-		
 		if (verticalaxis)
 		{
 			cam.transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinCameraPos.x, MaxCameraPos.x), Mathf.Clamp(transform.position.y, MinCameraPos.y, MaxCameraPos.y), -1);
@@ -83,29 +68,16 @@ public class PlayerControllerPlatformer : MonoBehaviour
 		if (Input.GetButtonDown("Jump"))
 		{
 			
-			if ((isUnderWater == false) && isJumping == false)
+			if (isUnderWater == false && isJumping == false)
 			{
-			isJumping = true;
-			animator.SetBool("Idle", false);
-			animator.SetBool("Walking", false);
-			animator.SetBool("FlippedWalk", false);
-			animator.SetBool("FlippedIdle", false);
-			if (flipped == false)
-			{
-			animator.SetBool("Jump", true);
-			}
-			if (flipped == true)
-			{
-			animator.SetBool("Jump", false);
-			animator.SetBool("FlippedJump", true);
-			}
-			Speed = 8f;
-			rigidbody2d.velocity = Vector2.up * JumpPower * 1.3f;
+				isJumping = true;
+				Speed = 8f;
+				rigidbody2d.velocity = Vector2.up * JumpPower * 1.3f;
 			}
 			
 			if (isUnderWater == true)
 			{
-			rigidbody2d.gravityScale = 1;
+			rigidbody2d.gravityScale = 2f;
 			Speed = 8f;
 			rigidbody2d.velocity = Vector2.up * JumpPower * 1.3f;
 			}
@@ -115,13 +87,15 @@ public class PlayerControllerPlatformer : MonoBehaviour
 	
 	void OnCollisionExit2D (Collision2D collision)
 	{
-	
-		if ((collision.gameObject.name == "Sand") && isUnderWater == true)
+		if (collision.gameObject.name == "Sand" && isUnderWater == true)
 		{
-				Speed = 8f;
-		   
+			Speed = 8f;
         }
-	
+		else if (collision.gameObject.name == "Sand" && isUnderWater == false)
+		{
+			Speed = 8f;
+			animator.SetBool("Jump", true);
+		}
 	}
 	
 		
@@ -146,7 +120,8 @@ public class PlayerControllerPlatformer : MonoBehaviour
 			{
 				if (hitPos.normal.y > 0)
 				{
-				isJumping = false;
+					isJumping = false;
+					animator.SetBool("Jump", false);
 				}
 			}
 		}
@@ -177,8 +152,8 @@ public class PlayerControllerPlatformer : MonoBehaviour
 			
 			if (isUnderWater == true)
 			{
-			MinCameraPos = new Vector3(-950,-1111,-1);
-			MaxCameraPos = new Vector3(950,1111,-1);
+			MinCameraPos = new Vector3(-76,-153,-1);
+			MaxCameraPos = new Vector3(238,67,-1);
 			}
 			
 			verticalaxis = true;

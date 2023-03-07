@@ -16,6 +16,7 @@ public class PlayerControllerARPG : MonoBehaviour
     private GameObject hpscript;
     private bool invincible;
     public GameObject gem;
+    public string lastDir;
 
     //private Renderer bg_rend;
     public Vector2 MinCameraPos;
@@ -83,28 +84,46 @@ public class PlayerControllerARPG : MonoBehaviour
         cam.transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinCameraPos.x, MaxCameraPos.x), Mathf.Clamp(transform.position.y, MinCameraPos.y, MaxCameraPos.y), -10);
         //.transform.position = transform.position + new Vector3(0, 0, -1);
 
-        parentPos = gameObject.transform.position + new Vector3(0, 0, 1);
+        parentPos = gameObject.transform.position;
+        if (movement.y == 1)
+        {
+            lastDir = "right";
+        }
+        else if (movement.y == -1)
+        {
+            lastDir = "left";
+        }
+        else if (movement.x == -1)
+        {
+            lastDir = "down";
+        }
+        else if (movement.x == 1)
+        {
+            lastDir = "up";
+        }
+
+
 
         //sword.SetActive(true);
-        if (movement.y == 1)
+        if (lastDir == "right")
         {
             animator.SetInteger("Idle", 1);
             sword.transform.position = parentPos + Vector3.up;
             sword.transform.eulerAngles = new Vector3(0, 0, 90);
         }
-        else if (movement.y == -1)
+        else if (lastDir == "left")
         {
             animator.SetInteger("Idle", 3);
             sword.transform.position = (parentPos - new Vector3(0, 0, 1.5f)) + Vector3.down;
             sword.transform.eulerAngles = new Vector3(0, 0, -90);
         }
-        else if (movement.x == -1)
+        else if (lastDir == "down")
         {
             animator.SetInteger("Idle", 4);
             sword.transform.position = parentPos + Vector3.left;
             sword.transform.eulerAngles = new Vector3(0, 0, -180);
         }
-        else if (movement.x == 1)
+        else if (lastDir == "up")
         {
             animator.SetInteger("Idle", 2);
             sword.transform.position = parentPos + Vector3.right;

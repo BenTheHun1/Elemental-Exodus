@@ -36,8 +36,8 @@ public class EnemyAIPlatformerGround : MonoBehaviour
 			dir = new Vector2(4, 0);
 			}
 		}
-		
-		if (collision.gameObject.name == "tempPlayer")
+
+		if (collision.gameObject.CompareTag("Player"))
         {
 			foreach(ContactPoint2D hitPos in collision.contacts)
 			{

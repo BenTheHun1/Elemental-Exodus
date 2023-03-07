@@ -69,7 +69,7 @@ public class EnemyAiSimple1 : MonoBehaviour
     {
         random_dir = new Vector2(Random.Range(-5, 6), Random.Range(-5, 6));
 
-        if ((collision.gameObject.name == "tempPlayer"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             foreach (ContactPoint2D hitPos in collision.contacts)
             {

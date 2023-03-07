@@ -8,7 +8,7 @@ public class NextScene : MonoBehaviour
 
      void OnCollisionEnter2D(Collision2D collision)
     {	
-		if (collision.gameObject.name == "tempPlayer")
+		if (collision.gameObject.CompareTag("Player"))
         {
             if (SceneManager.GetActiveScene().name == "WaterZoneAct1")
             {
